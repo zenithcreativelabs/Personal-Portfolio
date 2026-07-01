@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Najmi Maura Faza Kusnandar — Photographer / Videographer / Web &amp; Data</title>
+<meta name="description" content="Portfolio of Najmi Maura Faza Kusnandar: event &amp; photoshoot photography, video editing, web development, and data analysis. Team Lead at Zenith Creative Labs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #05070a;
+    --panel: #0d1420;
+    --panel-2: #0a0f18;
+    --blue-bright: #18c4f4;
+    --blue-deep: #0a4d8f;
+    --blue-mute: #5b9dc7;
+    --ink: #e8edf2;
+    --ink-dim: #95a5b5;
+    --line: rgba(91,157,199,0.18);
+    --gold: #c9a15a;
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+  html{ scroll-behavior: smooth; }
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  ::selection{ background: var(--blue-deep); color: var(--ink); }
+
+  a{ color: inherit; text-decoration: none; }
+  img{ max-width:100%; display:block; }
+
+  h1,h2,h3,h4{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+  }
+
+  .eyebrow{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--blue-mute);
+  }
+
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* Focus visibility */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline: 2px solid var(--blue-bright);
+    outline-offset: 3px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+  }
+
+  /* ============ NAV ============ */
+  header{
+    position: fixed;
+    top:0; left:0; right:0;
+    z-index: 100;
+    background: rgba(5,7,10,0.78);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 18px 32px;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+  .nav-mark{
+    font-family:'Fraunces', serif;
+    font-size: 1.15rem;
+    font-weight:600;
+    letter-spacing: 0.01em;
+  }
+  .nav-mark span{ color: var(--blue-bright); }
+  .nav-links{
+    display:flex;
+    gap: 34px;
+    list-style:none;
+  }
+  .nav-links a{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  .nav-links a:hover{ color: var(--blue-bright); }
+  .nav-cta{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    border: 1px solid var(--blue-mute);
+    padding: 9px 18px;
+    border-radius: 2px;
+    color: var(--ink);
+    transition: all 0.2s ease;
+  }
+  .nav-cta:hover{ background: var(--blue-bright); border-color: var(--blue-bright); color: #05070a; }
+  .nav-toggle{ display:none; background:none; border:none; color:var(--ink); font-size:1.5rem; cursor:pointer; }
+
+  @media (max-width: 860px){
+    .nav-links{
+      position: fixed;
+      top: 64px; left:0; right:0;
+      flex-direction: column;
+      background: var(--panel-2);
+      border-bottom: 1px solid var(--line);
+      padding: 24px 32px;
+      gap: 20px;
+      transform: translateY(-130%);
+      transition: transform 0.3s ease;
+    }
+    .nav-links.open{ transform: translateY(0); }
+    .nav-cta{ display:none; }
+    .nav-toggle{ display:block; }
+  }
+  @media (max-width: 480px){
+    .nav{ padding: 16px 20px; }
+    .nav-mark{ font-size: 1rem; }
+    .nav-links{ padding: 24px 20px; }
+  }
+
+  /* ============ SECTION RULE ============ */
+  .section-rule{
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--blue-mute) 18%, var(--blue-bright) 50%, var(--blue-mute) 82%, transparent);
+    opacity: 0.35;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position: relative;
+    min-height: 100svh;
+    display:flex;
+    align-items:center;
+    padding-top: 90px;
+    overflow: hidden;
+  }
+  .hero-grid-bg{
+    position:absolute;
+    inset:0;
+    z-index: 0;
+  }
+  .hero-grid-bg svg{ width:100%; height:100%; }
+  .hero-grain{
+    position:absolute; inset:0;
+    background-image: radial-gradient(rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 3px 3px;
+    z-index:1;
+    pointer-events:none;
+  }
+  .hero-inner{
+    position: relative;
+    z-index: 3;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+    width:100%;
+  }
+  .hero-layout{
+    display:grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 64px;
+    align-items:center;
+  }
+  .hero-eyebrow{
+    display:flex;
+    align-items:center;
+    gap: 14px;
+    margin-bottom: 26px;
+  }
+  .hero-eyebrow .dot{
+    width:7px; height:7px; border-radius:50%;
+    background: var(--blue-bright);
+    box-shadow: 0 0 12px var(--blue-bright);
+    flex-shrink: 0;
+  }
+  .hero h1{
+    font-size: clamp(2.1rem, 5.4vw, 4.4rem);
+    color: var(--ink);
+    max-width: 18ch;
+  }
+  .hero-tagline{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--blue-bright);
+    margin-top: 14px;
+  }
+  .hero-sub{
+    margin-top: 24px;
+    font-size: 1.04rem;
+    color: var(--ink-dim);
+    max-width: 52ch;
+  }
+
+  /* Portrait card: framed, with corner ticks + caption tag instead of a bare box */
+  .hero-portrait{
+    display:flex;
+    justify-content:center;
+  }
+  .portrait-frame{
+    position: relative;
+    width: 100%;
+    max-width: 320px;
+  }
+  .portrait-frame::before,
+  .portrait-frame::after{
+    content:"";
+    position:absolute;
+    width: 22px; height: 22px;
+    border: 1px solid var(--blue-bright);
+    opacity: 0.6;
+    z-index: 2;
+    pointer-events:none;
+  }
+  .portrait-frame::before{ top:-10px; left:-10px; border-right:none; border-bottom:none; }
+  .portrait-frame::after{ bottom:-10px; right:-10px; border-left:none; border-top:none; }
+  .portrait-slot{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    aspect-ratio: 4/5;
+    border-radius: 3px;
+    border: 1px solid var(--line);
+    background:
+      linear-gradient(160deg, rgba(24,196,244,0.07), rgba(13,20,32,0.4)),
+      var(--panel);
+  }
+  .portrait-tag{
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    background: rgba(5,7,10,0.72);
+    border: 1px solid var(--line);
+    padding: 6px 11px;
+    border-radius: 2px;
+    z-index: 2;
+    color: var(--blue-mute);
+  }
+
+  @media (max-width: 900px){
+    .hero-layout{ grid-template-columns: 1fr; gap: 40px; }
+    .hero-portrait{ order: -1; }
+    .portrait-frame{ max-width: 220px; }
+  }
+  @media (max-width: 480px){
+    .hero-inner{ padding: 36px 20px 56px; }
+    .hero-actions{ flex-direction: column; }
+    .hero-actions .btn{ width: 100%; justify-content:center; }
+  }
+
+  .hero-roles{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 34px;
+  }
+  .role-tag{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    color: var(--blue-mute);
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+    border-radius: 2px;
+    background: rgba(13,20,32,0.5);
+  }
+  .hero-actions{
+    margin-top: 46px;
+    display:flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 16px 30px;
+    border-radius: 2px;
+    cursor:pointer;
+    transition: all 0.22s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .btn-solid{
+    background: var(--blue-bright);
+    color: #05070a;
+    border: 1px solid var(--blue-bright);
+    font-weight: 600;
+  }
+  .btn-solid:hover{ background: #3fd4ff; box-shadow: 0 0 28px rgba(24,196,244,0.35); transform: translateY(-1px); }
+  .btn-ghost{
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover{ border-color: var(--blue-mute); color: var(--blue-bright); }
+
+  /* ============ SECTION SHELL ============ */
+  section{ position: relative; padding: 130px 0; }
+  @media (max-width: 860px){
+    section{ padding: 84px 0; }
+  }
+  @media (max-width: 480px){
+    section{ padding: 64px 0; }
+    .wrap{ padding: 0 20px; }
+  }
+  .section-head{
+    margin-bottom: 64px;
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 600px){
+    .section-head{ margin-bottom: 40px; }
+  }
+  .section-head h2{
+    font-size: clamp(1.7rem, 5vw, 2.9rem);
+    margin-top: 12px;
+    max-width: 18ch;
+  }
+  .section-head p{
+    color: var(--ink-dim);
+    max-width: 38ch;
+    font-size: 0.98rem;
+  }
+
+  /* ============ CREATIVE WORK (Photo/Video) ============ */
+  .creative{ background: linear-gradient(180deg, var(--bg) 0%, #060a10 100%); }
+
+  .work-tabs{
+    display:flex;
+    gap: 8px;
+    margin-bottom: 44px;
+    border-bottom: 1px solid var(--line);
+  }
+  .work-tab{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.76rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 14px 4px;
+    margin-right: 30px;
+    color: var(--ink-dim);
+    border-bottom: 2px solid transparent;
+    cursor:pointer;
+    background:none;
+    border-top:none;border-left:none;border-right:none;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .work-tab.active, .work-tab:hover{ color: var(--ink); border-bottom-color: var(--blue-bright); }
+
+  .work-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .work-grid[data-hidden="true"]{ display:none; }
+
+  .work-card{
+    position: relative;
+    aspect-ratio: 4/5;
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--line);
+  }
+  .work-card.tall{ grid-row: span 2; aspect-ratio: 4/8.4; }
+  .work-card.wide{ grid-column: span 2; aspect-ratio: 8.4/5; }
+
+  .img-slot{
+    position:absolute; inset:0;
+    background: var(--panel);
+  }
+  .img-slot img,
+  .img-slot video{
+    width:100%; height:100%;
+    object-fit: cover;
+    display:block;
+  }
+  .img-placeholder{
+    position:absolute; inset:0;
+    display:none;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    gap: 10px;
+    background:
+      repeating-linear-gradient(135deg, rgba(91,157,199,0.05) 0px, rgba(91,157,199,0.05) 1px, transparent 1px, transparent 14px),
+      var(--panel);
+    color: var(--ink-dim);
+    text-align:center;
+    padding: 20px;
+  }
+  .img-placeholder svg{ width:30px; height:30px; opacity:0.55; }
+  .img-placeholder .slot-label{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--blue-mute);
+    word-break: break-all;
+  }
+  .img-placeholder .slot-sub{ font-size: 0.74rem; max-width: 22ch; color: var(--ink-dim); }
+
+  .work-card-tag{
+    position:absolute;
+    bottom: 14px; left: 14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    background: rgba(5,7,10,0.7);
+    border: 1px solid var(--line);
+    padding: 6px 11px;
+    border-radius: 2px;
+    z-index: 2;
+  }
+
+  @media (max-width: 900px){
+    .work-grid{ grid-template-columns: repeat(2,1fr); }
+    .work-card.wide{ grid-column: span 2; }
+    .work-card.tall{ grid-row: span 1; aspect-ratio: 4/5; }
+  }
+  @media (max-width: 560px){
+    .work-grid{ grid-template-columns: 1fr; }
+    .work-card.wide, .work-card.tall{ grid-column: span 1; grid-row: span 1; aspect-ratio: 4/5; }
+  }
+
+  /* ============ TECHNICAL (Data + Web) ============ */
+  .technical{ background: var(--panel-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .tech-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+  }
+  .tech-col{
+    padding: 48px;
+    border-right: 1px solid var(--line);
+  }
+  .tech-col:last-child{ border-right:none; }
+  .tech-col h3{
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+  .tech-col .tech-icon{
+    width: 38px; height:38px;
+    margin-bottom: 22px;
+    color: var(--blue-bright);
+  }
+  .tech-col p{ color: var(--ink-dim); font-size: 0.95rem; margin-bottom: 26px; }
+
+  .stack-row{
+    display:flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+  .stack-pill{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    border: 1px solid var(--line);
+    color: var(--blue-mute);
+    padding: 6px 12px;
+    border-radius: 2px;
+  }
+
+  .tech-project{
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    margin-top: 18px;
+  }
+  .tech-project-slot{
+    position: relative;
+    aspect-ratio: 16/9;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 14px;
+  }
+  .tech-project-slot .img-placeholder{
+    border: 1px dashed var(--line);
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.05em;
+  }
+  .tech-project h4{ font-family:'Inter',sans-serif; font-weight:600; font-size: 0.95rem; margin-bottom: 4px; }
+  .tech-project span{ color: var(--ink-dim); font-size: 0.85rem; }
+
+  @media (max-width: 860px){
+    .tech-grid{ grid-template-columns: 1fr; }
+    .tech-col{ border-right:none; border-bottom: 1px solid var(--line); padding: 36px 28px; }
+  }
+  @media (max-width: 480px){
+    .tech-col{ padding: 28px 20px; }
+  }
+
+  /* ============ PROJECT FEATURE (Arkwright) ============ */
+  .project-feature{
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    overflow: hidden;
+  }
+  .project-feature-header{
+    padding: 48px;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  .project-feature-header h3{
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    margin: 10px 0 14px;
+  }
+  .project-desc{
+    color: var(--ink-dim);
+    font-size: 1rem;
+    max-width: 58ch;
+    line-height: 1.7;
+  }
+  .project-links{ margin-top: 28px; }
+
+  .project-screens{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--line);
+  }
+  .project-screen-card{
+    padding: 0;
+    border-right: 1px solid var(--line);
+  }
+  .project-screen-card:last-child{ border-right: none; }
+  .screen-label{
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--line);
+    background: var(--panel);
+  }
+  .screen-img img{
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    object-position: top left;
+    display: block;
+  }
+  .screen-iframe{
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+    background: var(--panel);
+  }
+  .screen-iframe iframe{
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: top left;
+    border: none;
+    pointer-events: none;
+  }
+  .iframe-overlay-link{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    cursor: pointer;
+  }
+
+  .project-walkthrough{
+    padding: 40px 48px;
+    background: var(--bg);
+  }
+  .walkthrough-label{ margin-bottom: 28px; }
+  .walkthrough-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--line);
+  }
+  .walkthrough-item{
+    padding: 24px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+  .walkthrough-item:nth-child(3n){ border-right: none; }
+  .walkthrough-item:nth-child(n+4){ border-bottom: none; }
+  .walkthrough-num{
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--blue-bright);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .walkthrough-item h4{
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+  .walkthrough-item p{
+    font-size: 0.82rem;
+    color: var(--ink-dim);
+    line-height: 1.55;
+  }
+
+  .tech-stack-bar{
+    margin-top: 32px;
+    padding: 28px 32px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+  }
+
+  @media (max-width: 860px){
+    .project-feature-header{ padding: 32px 24px; }
+    .project-screens{ grid-template-columns: 1fr; }
+    .project-screen-card{ border-right: none; border-bottom: 1px solid var(--line); }
+    .project-screen-card:last-child{ border-bottom: none; }
+    .walkthrough-grid{ grid-template-columns: repeat(2,1fr); }
+    .walkthrough-item:nth-child(3n){ border-right: 1px solid var(--line); }
+    .walkthrough-item:nth-child(2n){ border-right: none; }
+    .walkthrough-item:nth-child(n+4){ border-bottom: 1px solid var(--line); }
+    .walkthrough-item:nth-child(n+5){ border-bottom: none; }
+    .project-walkthrough{ padding: 32px 24px; }
+  }
+  @media (max-width: 480px){
+    .project-feature-header{ padding: 24px 20px; }
+    .walkthrough-grid{ grid-template-columns: 1fr; }
+    .walkthrough-item{ border-right: none !important; border-bottom: 1px solid var(--line) !important; }
+    .walkthrough-item:last-child{ border-bottom: none !important; }
+    .project-walkthrough{ padding: 24px 20px; }
+    .tech-stack-bar{ padding: 24px 20px; }
+  }
+
+  /* ============ LEADERSHIP / ZENITH ============ */
+  .leadership{ background: var(--bg); }
+  .lead-layout{
+    display:grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 64px;
+    align-items:start;
+  }
+  .lead-copy p{ color: var(--ink-dim); margin-bottom: 18px; font-size: 1rem; max-width: 50ch; }
+  .lead-copy .role-line{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.82rem;
+    color: var(--blue-bright);
+    margin-bottom: 18px;
+    display:block;
+  }
+  .stat-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .stat-cell{
+    background: var(--panel);
+    padding: 30px 26px;
+  }
+  .stat-cell .num{
+    font-family:'Fraunces', serif;
+    font-size: 2.2rem;
+    color: var(--blue-bright);
+    font-weight: 500;
+  }
+  .stat-cell .label{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin-top: 6px;
+  }
+
+  .responsibility-list{
+    list-style: none;
+    margin-top: 30px;
+    display:flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .responsibility-list li{
+    display:flex;
+    gap: 14px;
+    align-items:flex-start;
+    font-size: 0.95rem;
+    color: var(--ink);
+  }
+  .responsibility-list li::before{
+    content:"";
+    width: 6px; height:6px;
+    margin-top: 8px;
+    background: var(--blue-bright);
+    flex-shrink:0;
+  }
+
+  @media (max-width: 860px){
+    .lead-layout{ grid-template-columns: 1fr; }
+  }
+
+  /* ============ BOOKING / CONTACT ============ */
+  .contact{
+    background: var(--panel-2);
+    border-top: 1px solid var(--line);
+  }
+  .contact-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border: 1px solid var(--line);
+  }
+  .contact-panel{
+    padding: 52px;
+  }
+  .contact-panel + .contact-panel{ border-left: 1px solid var(--line); }
+
+  .contact-panel h3{ font-size: 1.6rem; margin-bottom: 10px; }
+  .contact-panel .desc{ color: var(--ink-dim); font-size: 0.92rem; margin-bottom: 30px; }
+
+  .form-group{ margin-bottom: 20px; }
+  .form-group label{
+    display:block;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: var(--blue-mute);
+    margin-bottom: 8px;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea{
+    width: 100%;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 13px 14px;
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    font-size: 0.92rem;
+    transition: border-color 0.2s ease;
+  }
+  .form-group input::placeholder,
+  .form-group textarea::placeholder{ color: #4c5a6a; }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus{
+    border-color: var(--blue-bright);
+    outline: none;
+  }
+  .form-group textarea{ resize: vertical; min-height: 110px; }
+
+  .row-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+  .form-submit{
+    width:100%;
+    justify-content:center;
+    margin-top: 8px;
+  }
+
+  .form-note{
+    margin-top: 16px;
+    font-size: 0.78rem;
+    color: var(--ink-dim);
+  }
+
+  .form-status{
+    margin-top: 14px;
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    display:none;
+    padding: 10px 14px;
+    border-radius: 2px;
+  }
+  .form-status.show{ display:block; }
+  .form-status.success{ color: #7fe3a8; border: 1px solid rgba(127,227,168,0.3); background: rgba(127,227,168,0.06); }
+  .form-status.error{ color: #f08a8a; border: 1px solid rgba(240,138,138,0.3); background: rgba(240,138,138,0.06); }
+
+  .calendly-embed{ height: 680px; }
+  @media (max-width: 860px){
+    .contact-grid{ grid-template-columns: 1fr; }
+    .contact-panel + .contact-panel{ border-left:none; border-top: 1px solid var(--line); }
+    .row-2{ grid-template-columns: 1fr; }
+    .contact-panel{ padding: 36px 28px; }
+    .calendly-embed{ height: 560px; }
+  }
+  @media (max-width: 480px){
+    .contact-panel{ padding: 28px 20px; }
+    .calendly-embed{ height: 500px; }
+  }
+
+  /* ============ FOOTER ============ */
+  footer{
+    padding: 60px 0 40px;
+    border-top: 1px solid var(--line);
+  }
+  .footer-grid{
+    display:flex;
+    justify-content: space-between;
+    align-items:flex-end;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .footer-mark{
+    font-family:'Fraunces', serif;
+    font-size: 1.3rem;
+  }
+  .footer-mark span{ color: var(--blue-bright); }
+  .footer-links{
+    display:flex;
+    gap: 26px;
+    list-style:none;
+    flex-wrap:wrap;
+  }
+  .footer-links a{
+    font-family:'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+  .footer-links a:hover{ color: var(--blue-bright); }
+  .footer-bottom{
+    margin-top: 34px;
+    color: #4c5a6a;
+    font-size: 0.78rem;
+    font-family:'JetBrains Mono', monospace;
+  }
+
+  /* fade-in on scroll */
+  .reveal{
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity:1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a href="#top" class="nav-mark">Najmi <span>Kusnandar</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#work">Photo &amp; Video</a></li>
+      <li><a href="#technical">Data &amp; Web</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#book" class="nav-cta">Book a meeting</a>
+    <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-grid-bg" aria-hidden="true">
+    <svg viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="heroFade" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="0%" stop-color="#18c4f4" stop-opacity="0.16"/>
+          <stop offset="55%" stop-color="#18c4f4" stop-opacity="0.04"/>
+          <stop offset="100%" stop-color="#18c4f4" stop-opacity="0"/>
+        </linearGradient>
+        <radialGradient id="heroGlow" cx="78%" cy="22%" r="55%">
+          <stop offset="0%" stop-color="#18c4f4" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#18c4f4" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1400" height="900" fill="url(#heroGlow)"/>
+      <g stroke="#5b9dc7" stroke-opacity="0.13" stroke-width="1">
+        <line x1="0" y1="120" x2="1400" y2="120"/>
+        <line x1="0" y1="320" x2="1400" y2="320"/>
+        <line x1="0" y1="520" x2="1400" y2="520"/>
+        <line x1="0" y1="720" x2="1400" y2="720"/>
+        <line x1="200" y1="0" x2="200" y2="900"/>
+        <line x1="500" y1="0" x2="500" y2="900"/>
+        <line x1="900" y1="0" x2="900" y2="900"/>
+        <line x1="1200" y1="0" x2="1200" y2="900"/>
+      </g>
+      <rect width="1400" height="900" fill="url(#heroFade)"/>
+    </svg>
+  </div>
+  <div class="hero-grain" aria-hidden="true"></div>
+
+  <div class="hero-inner hero-layout">
+    <div class="hero-text">
+      <div class="hero-eyebrow reveal">
+        <span class="dot"></span>
+        <span class="eyebrow">Based in Kuala Lumpur, Malaysia · Available worldwide</span>
+      </div>
+      <h1 class="reveal">Najmi Maura Faza Kusnandar</h1>
+      <p class="hero-tagline reveal">Personal Portfolio</p>
+      <p class="hero-sub reveal">
+        I'm a freelance photographer and videographer covering events and brand content, a web developer building sites and web apps, and an MIS graduate from Universiti Malaya who turns raw data into decisions. Currently Team Lead at Zenith Creative Labs.
+      </p>
+      <div class="hero-roles reveal">
+        <span class="role-tag">Event &amp; Photoshoot Photography</span>
+        <span class="role-tag">Video Shooting &amp; Editing</span>
+        <span class="role-tag">Web Development</span>
+        <span class="role-tag">Data Analysis — Excel / Python / SQL</span>
+        <span class="role-tag">Client Outreach &amp; Social Media Mgmt</span>
+      </div>
+      <div class="hero-actions reveal">
+        <a href="#book" class="btn btn-solid">Book an inquiry meeting</a>
+        <a href="#work" class="btn btn-ghost">View the work</a>
+      </div>
+    </div>
+
+    <div class="hero-portrait reveal">
+      <div class="portrait-frame">
+        <div class="img-slot portrait-slot">
+          <img src="assets/profile/profile.jpg" alt="Najmi Kusnandar" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+            <span class="slot-label">assets/profile/profile.jpg</span>
+            <span class="slot-sub">Add this file to show your photo</span>
+          </div>
+        </div>
+        <span class="portrait-tag">Najmi Kusnandar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule" aria-hidden="true"></div>
+
+
+<!-- ============ CREATIVE WORK ============ -->
+<section class="creative" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">01 — Creative</span>
+        <h2>Photography &amp; video, shot for the way people actually scroll, print, and remember.</h2>
+      </div>
+      <p>Events, photoshoots, brand films, and short-form edits for social. Every slot below is ready for your own selects — swap in stills directly.</p>
+    </div>
+
+    <div class="work-tabs reveal">
+      <button type="button" class="work-tab active" data-target="photoGrid">Photography</button>
+      <button type="button" class="work-tab" data-target="videoGrid">Videography &amp; Editing</button>
+    </div>
+
+    <div class="work-grid reveal" id="photoGrid">
+      <div class="work-card tall">
+        <div class="img-slot">
+          <img src="assets/photography/event-1.jpg" alt="Event photography" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5L5 19"/></svg>
+            <span class="slot-label">assets/photography/event-1.jpg</span>
+            <span class="slot-sub">Event coverage — full body / portrait crop</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Events</span>
+      </div>
+      <div class="work-card">
+        <div class="img-slot">
+          <img src="assets/photography/portrait-1.jpg" alt="Portrait photography" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5L5 19"/></svg>
+            <span class="slot-label">assets/photography/portrait-1.jpg</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Portrait</span>
+      </div>
+      <div class="work-card">
+        <div class="img-slot">
+          <img src="assets/photography/brand-1.jpg" alt="Brand shoot photography" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5L5 19"/></svg>
+            <span class="slot-label">assets/photography/brand-1.jpg</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Brand shoot</span>
+      </div>
+      <div class="work-card wide">
+        <div class="img-slot">
+          <img src="assets/photography/event-2.jpg" alt="Event photography wide shot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5L5 19"/></svg>
+            <span class="slot-label">assets/photography/event-2.jpg</span>
+            <span class="slot-sub">Wide shot — venue / candid crowd</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Events</span>
+      </div>
+      <div class="work-card">
+        <div class="img-slot">
+          <img src="assets/photography/photoshoot-1.jpg" alt="Photoshoot" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5L5 19"/></svg>
+            <span class="slot-label">assets/photography/photoshoot-1.jpg</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Photoshoot</span>
+      </div>
+      <div class="work-card">
+        <div class="img-slot">
+          <img src="assets/photography/event-3.jpg" alt="Event photography" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><circle cx="8.5" cy="10.5" r="1.5"/><path d="M21 15l-5-5L5 19"/></svg>
+            <span class="slot-label">assets/photography/event-3.jpg</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Events</span>
+      </div>
+    </div>
+
+    <div class="work-grid" id="videoGrid" data-hidden="true">
+      <div class="work-card wide">
+        <div class="img-slot video-slot">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/videography/social-reel-1.mp4" type="video/mp4">
+          </video>
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></svg>
+            <span class="slot-label">assets/videography/social-reel-1.mp4</span>
+            <span class="slot-sub">Reel or brand film</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Social reel</span>
+      </div>
+      <div class="work-card">
+        <div class="img-slot video-slot">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/videography/edit-reel-1.mp4" type="video/mp4">
+          </video>
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></svg>
+            <span class="slot-label">assets/videography/edit-reel-1.mp4</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Edit reel</span>
+      </div>
+      <div class="work-card">
+        <div class="img-slot video-slot">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/videography/event-recap-1.mp4" type="video/mp4">
+          </video>
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></svg>
+            <span class="slot-label">assets/videography/event-recap-1.mp4</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Event recap</span>
+      </div>
+      <div class="work-card tall">
+        <div class="img-slot video-slot">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/videography/vertical-edit-1.mp4" type="video/mp4">
+          </video>
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></svg>
+            <span class="slot-label">assets/videography/vertical-edit-1.mp4</span>
+            <span class="slot-sub">Vertical short-form, full edit</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Vertical edit</span>
+      </div>
+      <div class="work-card">
+        <div class="img-slot video-slot">
+          <video controls muted playsinline preload="metadata">
+            <source src="assets/videography/campaign-1.mp4" type="video/mp4">
+          </video>
+          <div class="img-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M10 9l5 3-5 3z"/></svg>
+            <span class="slot-label">assets/videography/campaign-1.mp4</span>
+          </div>
+        </div>
+        <span class="work-card-tag">Campaign</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule" aria-hidden="true"></div>
+
+<!-- ============ TECHNICAL ============ -->
+<section class="technical" id="technical">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">02 — Web Development</span>
+        <h2>Building sites and web apps that actually work.</h2>
+      </div>
+      <p>BBA in Management Information Systems, Universiti Malaya. I design and build production-ready websites from scratch using HTML, CSS, and Java.</p>
+    </div>
+
+    <!-- Arkwright featured project -->
+    <div class="project-feature reveal">
+      <div class="project-feature-header">
+        <div class="project-feature-meta">
+          <span class="eyebrow">Featured project</span>
+          <h3>Arkwright Studio</h3>
+          <p class="project-desc">A full website built for a fictional architecture firm — Arkwright Studio, est. 1998, Kuala Lumpur. Designed and coded from scratch: hero section, scrolling marquee, project showcase with phase breakdowns, testimonials, and a contact form. Deployed live on Vercel.</p>
+          <div class="stack-row" style="margin-top:18px;">
+            <span class="stack-pill">HTML</span>
+            <span class="stack-pill">CSS</span>
+            <span class="stack-pill">JavaScript</span>
+            <span class="stack-pill">Vercel</span>
+          </div>
+          <div class="project-links">
+            <a href="https://arkwright-firm.vercel.app/" target="_blank" rel="noopener" class="btn btn-solid">View live site ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two-pane: code screenshot + site preview iframe -->
+      <div class="project-screens">
+        <div class="project-screen-card">
+          <div class="screen-label eyebrow">Source code</div>
+          <div class="screen-img">
+            <img src="assets/technical/arkwright-code.png" alt="Arkwright site source code on GitHub">
+          </div>
+        </div>
+        <div class="project-screen-card">
+          <div class="screen-label eyebrow">Live site preview</div>
+          <div class="screen-iframe">
+            <iframe src="https://arkwright-firm.vercel.app/" title="Arkwright Studio live site" loading="lazy" sandbox="allow-scripts allow-same-origin"></iframe>
+            <a href="https://arkwright-firm.vercel.app/" target="_blank" rel="noopener" class="iframe-overlay-link" aria-label="Open Arkwright Studio site in new tab"></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Site walkthrough: key sections -->
+      <div class="project-walkthrough">
+        <div class="walkthrough-label">
+          <span class="eyebrow">Site walkthrough</span>
+        </div>
+        <div class="walkthrough-grid">
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">01</span>
+            <div>
+              <h4>Hero</h4>
+              <p>Full-bleed hero with scrolling marquee ticker, live availability status, and dual CTA.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">02</span>
+            <div>
+              <h4>Studio</h4>
+              <p>About section with firm history, studio stats (248 projects, 27 countries, 26 years) and philosophy copy.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">03</span>
+            <div>
+              <h4>Selected Work</h4>
+              <p>Three featured projects with phase-by-phase build breakdowns — Blueprint, Sketch, Build, Final.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">04</span>
+            <div>
+              <h4>Process</h4>
+              <p>Four-phase methodology section explaining the studio's design and construction workflow.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">05</span>
+            <div>
+              <h4>Testimonials</h4>
+              <p>Client quotes from Meridian Group and Aurum Properties with attribution and role.</p>
+            </div>
+          </div>
+          <div class="walkthrough-item">
+            <span class="walkthrough-num">06</span>
+            <div>
+              <h4>Contact</h4>
+              <p>Project enquiry form with category select, studio address, email, and commission availability.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stack summary bar -->
+    <div class="tech-stack-bar reveal">
+      <span class="eyebrow" style="color:var(--ink-dim);">Also comfortable with</span>
+      <div class="stack-row" style="margin-top:14px;">
+        <span class="stack-pill">MS Excel</span>
+        <span class="stack-pill">Python</span>
+        <span class="stack-pill">SQL</span>
+        <span class="stack-pill">Java</span>
+        <span class="stack-pill">Data Analysis</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEADERSHIP ============ -->
+<section class="leadership" id="leadership">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">03 — Leadership</span>
+        <h2>Running the creative side at Zenith Creative Labs.</h2>
+      </div>
+    </div>
+
+    <div class="lead-layout reveal">
+      <div class="lead-copy">
+        <span class="role-line">Team Lead — Zenith Creative Labs</span>
+        <p>I lead client outreach and manage the relationship from first conversation through delivery, run social media management for client businesses, and oversee the marketing and sales work that keeps the studio's pipeline full.</p>
+        <p>This is the part of the work that doesn't show up in a gallery: the strategy calls, the content calendars, the pitches. It's also where the photography, video, web, and data skills meet — I can plan a campaign, shoot and edit it, build the page it lives on, and read the numbers it produces.</p>
+        <ul class="responsibility-list">
+          <li>Client outreach &amp; relationship management</li>
+          <li>Social media management for client businesses</li>
+          <li>Marketing strategy &amp; campaign planning</li>
+          <li>Sales pipeline &amp; pitching</li>
+        </ul>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-cell">
+          <div class="num">MIS</div>
+          <div class="label">BBA, Universiti Malaya</div>
+        </div>
+        <div class="stat-cell">
+          <div class="num">5+</div>
+          <div class="label">Disciplines under one roof</div>
+        </div>
+        <div class="stat-cell">
+          <div class="num">Lead</div>
+          <div class="label">Zenith Creative Labs</div>
+        </div>
+        <div class="stat-cell">
+          <div class="num">KL</div>
+          <div class="label">Based in Kuala Lumpur</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-rule" aria-hidden="true"></div>
+
+<!-- ============ CONTACT / BOOKING ============ -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <span class="eyebrow">04 — Get in touch</span>
+        <h2>Book a meeting, or just ask if I'm free.</h2>
+      </div>
+      <p>Use the booking panel for a scoped inquiry meeting on web development or social media management. Use the message panel for anything else — including a general availability check.</p>
+    </div>
+
+    <div class="contact-grid reveal" id="book">
+      <div class="contact-panel">
+        <h3>Book an inquiry meeting</h3>
+        <p class="desc">30-minute call to discuss your project — web development or social media management. Pick a time that works for you below.</p>
+        <!-- Calendly inline embed: pulls live availability from calendly.com/zenithcreativelabs -->
+        <div class="calendly-inline-widget calendly-embed" data-url="https://calendly.com/zenithcreativelabs?hide_event_type_details=1&background_color=0d1420&text_color=e8edf2&primary_color=18c4f4" style="min-width:280px;"></div>
+        <p class="form-note">Powered by Calendly. Times shown reflect your current device timezone.</p>
+      </div>
+
+      <div class="contact-panel">
+        <h3>Send an inquiry message</h3>
+        <p class="desc">Not ready to book? Ask about availability, pricing, or scope first.</p>
+        <!-- Replace YOUR_FORM_ID below with your real Formspree form ID once created -->
+        <form id="inquiryForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="form-group">
+            <label for="iq-name">Name</label>
+            <input type="text" id="iq-name" name="name" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="iq-email">Email</label>
+            <input type="email" id="iq-email" name="email" placeholder="you@business.com" required>
+          </div>
+          <div class="form-group">
+            <label for="iq-interest">I'm interested in</label>
+            <select id="iq-interest" name="interest" required>
+              <option value="" disabled selected>Select one</option>
+              <option value="photography">Photography</option>
+              <option value="videography">Videography / video editing</option>
+              <option value="web-development">Web development</option>
+              <option value="data-analysis">Data analysis</option>
+              <option value="social-media">Social media management</option>
+              <option value="other">Something else</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="iq-message">Message</label>
+            <textarea id="iq-message" name="message" placeholder="Tell me about your project, timeline, and what you're hoping to find out." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-solid form-submit">Send message</button>
+          <p class="form-note">This connects to an email or form backend (e.g. Formspree, EmailJS) once deployed — see the comment near <code>#inquiryForm</code> in the page source.</p>
+          <div class="form-status" id="inquiryStatus"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <a href="#top" class="footer-mark">Najmi <span>Kusnandar</span></a>
+      <ul class="footer-links">
+        <li><a href="#work">Photo &amp; Video</a></li>
+        <li><a href="#technical">Data &amp; Web</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <p class="footer-bottom">© 2026 Najmi Maura Faza Kusnandar. All rights reserved.</p>
+  </div>
+</footer>
+
+<!-- Calendly embed script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Work tabs (Photography / Videography)
+  const tabs = document.querySelectorAll('.work-tab');
+  const grids = { photoGrid: document.getElementById('photoGrid'), videoGrid: document.getElementById('videoGrid') };
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const target = tab.dataset.target;
+      Object.entries(grids).forEach(([key, el]) => {
+        el.setAttribute('data-hidden', key === target ? 'false' : 'true');
+      });
+    });
+  });
+
+  // ===== Inquiry form =====
+  // Submits to Formspree via fetch so the page doesn't redirect. Replace YOUR_FORM_ID in the
+  // form's action attribute above with your real Formspree form ID (formspree.io/forms).
+  const inquiryForm = document.getElementById('inquiryForm');
+  const inquiryStatus = document.getElementById('inquiryStatus');
+  inquiryForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('iq-name').value.trim();
+    const email = document.getElementById('iq-email').value.trim();
+    const interest = document.getElementById('iq-interest').value;
+    const message = document.getElementById('iq-message').value.trim();
+
+    inquiryStatus.classList.remove('success','error');
+    if (!name || !email || !interest || !message) {
+      inquiryStatus.textContent = 'Please fill in all fields before sending.';
+      inquiryStatus.classList.add('error','show');
+      return;
+    }
+
+    const formData = new FormData(inquiryForm);
+    try {
+      const response = await fetch(inquiryForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      if (response.ok) {
+        inquiryStatus.textContent = `Thanks, ${name.split(' ')[0]} — message received. I'll reply to ${email} shortly.`;
+        inquiryStatus.classList.add('success','show');
+        inquiryForm.reset();
+      } else {
+        inquiryStatus.textContent = 'Something went wrong sending your message. Please try again or email directly.';
+        inquiryStatus.classList.add('error','show');
+      }
+    } catch (err) {
+      inquiryStatus.textContent = 'Network error — please check your connection and try again.';
+      inquiryStatus.classList.add('error','show');
+    }
+  });
+
+  // Video fallback: if a video file doesn't exist yet, show the placeholder instead of a broken player
+  document.querySelectorAll('.video-slot video').forEach(video => {
+    const source = video.querySelector('source');
+    const showFallback = () => {
+      video.style.display = 'none';
+      const placeholder = video.nextElementSibling;
+      if (placeholder) placeholder.style.display = 'flex';
+    };
+    video.addEventListener('error', showFallback);
+    if (source) source.addEventListener('error', showFallback);
+    // also catch the case where the source 404s but no error event fires on some browsers
+    video.addEventListener('loadedmetadata', () => {
+      if (video.duration === 0 || isNaN(video.duration)) showFallback();
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
