@@ -182,12 +182,6 @@
     padding: 48px 32px 80px;
     width:100%;
   }
-  .hero-layout{
-    display:grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 64px;
-    align-items:center;
-  }
   .hero-eyebrow{
     display:flex;
     align-items:center;
@@ -220,10 +214,11 @@
     max-width: 52ch;
   }
 
-  /* Portrait card: framed, with corner ticks + caption tag instead of a bare box */
+  /* Portrait card */
   .hero-portrait{
     display:flex;
     justify-content:center;
+    align-items: flex-start;
   }
   .portrait-frame{
     position: relative;
@@ -253,6 +248,21 @@
       linear-gradient(160deg, rgba(24,196,244,0.07), rgba(13,20,32,0.4)),
       var(--panel);
   }
+  /* portrait needs absolute fill inside fixed container — override natural img-slot behaviour */
+  .portrait-slot .img-slot{
+    position: absolute;
+    inset: 0;
+  }
+  .portrait-slot .img-slot img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .portrait-slot .img-placeholder{
+    position: absolute;
+    inset: 0;
+    min-height: unset;
+  }
   .portrait-tag{
     position: absolute;
     bottom: 16px;
@@ -269,22 +279,39 @@
     color: var(--blue-mute);
   }
 
-  @media (max-width: 900px){
-    .hero-layout{ grid-template-columns: 1fr; gap: 36px; }
-    .hero-portrait{ order: -1; }
-    .portrait-frame{ max-width: 180px; margin: 0 auto; }
+  /* Desktop: side by side */
+  .hero-layout{
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 64px;
+    align-items: center;
   }
+
+  /* Tablet: stack, portrait sits above text, rectangular */
+  @media (max-width: 900px){
+    .hero-layout{
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .hero-portrait{ order: -1; width: 100%; }
+    .portrait-frame{ max-width: 200px; margin: 0 auto; }
+    .portrait-frame::before{ top:-8px; left:-8px; }
+    .portrait-frame::after{ bottom:-8px; right:-8px; }
+  }
+
+  /* Mobile */
   @media (max-width: 480px){
     .hero-inner{ padding: 28px 20px 48px; }
-    .hero-actions{ flex-direction: column; }
-    .hero-actions .btn{ width: 100%; justify-content: center; }
-    .portrait-frame{ max-width: 150px; }
-    .hero-eyebrow{ margin-bottom: 18px; }
+    .hero-layout{ gap: 24px; }
+    .portrait-frame{ max-width: 160px; }
+    .hero-eyebrow{ margin-bottom: 14px; }
     .hero-tagline{ font-size: 0.72rem; }
-    .hero-sub{ font-size: 0.95rem; }
-    .hero-roles{ margin-top: 22px; gap: 8px; }
+    .hero-sub{ font-size: 0.95rem; margin-top: 16px; }
+    .hero-roles{ margin-top: 20px; gap: 8px; }
     .role-tag{ font-size: 0.65rem; padding: 6px 10px; }
-    .hero-actions{ margin-top: 28px; gap: 12px; }
+    .hero-actions{ margin-top: 24px; gap: 12px; flex-direction: column; }
+    .hero-actions .btn{ width: 100%; justify-content: center; }
   }
 
   .hero-roles{
@@ -393,46 +420,73 @@
   .work-tab.active, .work-tab:hover{ color: var(--ink); border-bottom-color: var(--blue-bright); }
 
   .work-grid{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    columns: 3;
+    column-gap: 16px;
   }
   .work-grid[data-hidden="true"]{ display:none; }
 
   .work-card{
     position: relative;
-    aspect-ratio: 4/5;
+    break-inside: avoid;
+    margin-bottom: 16px;
     border-radius: 3px;
     overflow: hidden;
     background: var(--panel);
     border: 1px solid var(--line);
   }
-  .work-card.tall{ grid-row: span 2; aspect-ratio: 4/8.4; }
-  .work-card.wide{ grid-column: span 2; aspect-ratio: 8.4/5; }
+  /* Remove tall/wide classes — natural dimensions take over */
+  .work-card.tall, .work-card.wide{ all: unset; }
+  .work-card.tall{
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--line);
+  }
+  .work-card.wide{
+    position: relative;
+    break-inside: avoid;
+    margin-bottom: 16px;
+    border-radius: 3px;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--line);
+  }
 
+  /* Images and videos: natural size, no cropping */
   .img-slot{
-    position:absolute; inset:0;
+    position: relative;
+    width: 100%;
     background: var(--panel);
   }
-  .img-slot img,
-  .img-slot video{
-    width:100%; height:100%;
-    object-fit: cover;
-    display:block;
+  .img-slot img{
+    width: 100%;
+    height: auto;
+    display: block;
   }
+  .img-slot video{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Placeholder shown when file missing */
   .img-placeholder{
-    position:absolute; inset:0;
-    display:none;
+    position: relative;
+    display: none;
     flex-direction: column;
-    align-items:center;
-    justify-content:center;
+    align-items: center;
+    justify-content: center;
     gap: 10px;
+    min-height: 220px;
     background:
       repeating-linear-gradient(135deg, rgba(91,157,199,0.05) 0px, rgba(91,157,199,0.05) 1px, transparent 1px, transparent 14px),
       var(--panel);
     color: var(--ink-dim);
-    text-align:center;
-    padding: 20px;
+    text-align: center;
+    padding: 30px 20px;
   }
   .img-placeholder svg{ width:30px; height:30px; opacity:0.55; }
   .img-placeholder .slot-label{
@@ -446,7 +500,7 @@
   .img-placeholder .slot-sub{ font-size: 0.74rem; max-width: 22ch; color: var(--ink-dim); }
 
   .work-card-tag{
-    position:absolute;
+    position: absolute;
     bottom: 14px; left: 14px;
     font-family:'JetBrains Mono', monospace;
     font-size: 0.66rem;
@@ -460,13 +514,12 @@
   }
 
   @media (max-width: 900px){
-    .work-grid{ grid-template-columns: repeat(2,1fr); gap: 12px; }
-    .work-card.wide{ grid-column: span 2; }
-    .work-card.tall{ grid-row: span 1; aspect-ratio: 4/5; }
+    .work-grid{ columns: 2; column-gap: 12px; }
+    .work-card, .work-card.tall, .work-card.wide{ margin-bottom: 12px; }
   }
-  @media (max-width: 560px){
-    .work-grid{ grid-template-columns: 1fr; gap: 10px; }
-    .work-card.wide, .work-card.tall{ grid-column: span 1; grid-row: span 1; aspect-ratio: 4/5; }
+  @media (max-width: 480px){
+    .work-grid{ columns: 1; }
+    .work-card, .work-card.tall, .work-card.wide{ margin-bottom: 10px; }
   }
 
   /* ============ TECHNICAL (Data + Web) ============ */
