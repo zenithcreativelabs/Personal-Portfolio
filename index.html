@@ -201,7 +201,7 @@
     flex-shrink: 0;
   }
   .hero h1{
-    font-size: clamp(2.1rem, 5.4vw, 4.4rem);
+    font-size: clamp(1.75rem, 5.4vw, 4.4rem);
     color: var(--ink);
     max-width: 18ch;
   }
@@ -270,14 +270,21 @@
   }
 
   @media (max-width: 900px){
-    .hero-layout{ grid-template-columns: 1fr; gap: 40px; }
+    .hero-layout{ grid-template-columns: 1fr; gap: 36px; }
     .hero-portrait{ order: -1; }
-    .portrait-frame{ max-width: 220px; }
+    .portrait-frame{ max-width: 180px; margin: 0 auto; }
   }
   @media (max-width: 480px){
-    .hero-inner{ padding: 36px 20px 56px; }
+    .hero-inner{ padding: 28px 20px 48px; }
     .hero-actions{ flex-direction: column; }
-    .hero-actions .btn{ width: 100%; justify-content:center; }
+    .hero-actions .btn{ width: 100%; justify-content: center; }
+    .portrait-frame{ max-width: 150px; }
+    .hero-eyebrow{ margin-bottom: 18px; }
+    .hero-tagline{ font-size: 0.72rem; }
+    .hero-sub{ font-size: 0.95rem; }
+    .hero-roles{ margin-top: 22px; gap: 8px; }
+    .role-tag{ font-size: 0.65rem; padding: 6px 10px; }
+    .hero-actions{ margin-top: 28px; gap: 12px; }
   }
 
   .hero-roles{
@@ -350,7 +357,7 @@
     .section-head{ margin-bottom: 40px; }
   }
   .section-head h2{
-    font-size: clamp(1.7rem, 5vw, 2.9rem);
+    font-size: clamp(1.5rem, 5vw, 2.9rem);
     margin-top: 12px;
     max-width: 18ch;
   }
@@ -453,12 +460,12 @@
   }
 
   @media (max-width: 900px){
-    .work-grid{ grid-template-columns: repeat(2,1fr); }
+    .work-grid{ grid-template-columns: repeat(2,1fr); gap: 12px; }
     .work-card.wide{ grid-column: span 2; }
     .work-card.tall{ grid-row: span 1; aspect-ratio: 4/5; }
   }
   @media (max-width: 560px){
-    .work-grid{ grid-template-columns: 1fr; }
+    .work-grid{ grid-template-columns: 1fr; gap: 10px; }
     .work-card.wide, .work-card.tall{ grid-column: span 1; grid-row: span 1; aspect-ratio: 4/5; }
   }
 
@@ -658,11 +665,15 @@
   }
   @media (max-width: 480px){
     .project-feature-header{ padding: 24px 20px; }
+    .project-desc{ font-size: 0.92rem; }
+    .screen-iframe{ display: none; }  /* hide iframe preview on small screens — unusable at that size */
+    .project-screen-card:last-child{ display: none; }
+    .screen-img img{ height: 200px; }
     .walkthrough-grid{ grid-template-columns: 1fr; }
-    .walkthrough-item{ border-right: none !important; border-bottom: 1px solid var(--line) !important; }
+    .walkthrough-item{ border-right: none !important; border-bottom: 1px solid var(--line) !important; padding: 18px 16px; }
     .walkthrough-item:last-child{ border-bottom: none !important; }
     .project-walkthrough{ padding: 24px 20px; }
-    .tech-stack-bar{ padding: 24px 20px; }
+    .tech-stack-bar{ padding: 20px; }
   }
 
   /* ============ LEADERSHIP / ZENITH ============ */
@@ -694,7 +705,7 @@
   }
   .stat-cell .num{
     font-family:'Fraunces', serif;
-    font-size: 2.2rem;
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
     color: var(--blue-bright);
     font-weight: 500;
   }
@@ -730,7 +741,12 @@
   }
 
   @media (max-width: 860px){
-    .lead-layout{ grid-template-columns: 1fr; }
+    .lead-layout{ grid-template-columns: 1fr; gap: 40px; }
+    .stat-cell{ padding: 22px 18px; }
+  }
+  @media (max-width: 480px){
+    .lead-layout{ gap: 32px; }
+    .stat-cell{ padding: 18px 14px; }
   }
 
   /* ============ BOOKING / CONTACT ============ */
@@ -749,7 +765,7 @@
   }
   .contact-panel + .contact-panel{ border-left: 1px solid var(--line); }
 
-  .contact-panel h3{ font-size: 1.6rem; margin-bottom: 10px; }
+  .contact-panel h3{ font-size: clamp(1.3rem, 4vw, 1.6rem); margin-bottom: 10px; }
   .contact-panel .desc{ color: var(--ink-dim); font-size: 0.92rem; margin-bottom: 30px; }
 
   .form-group{ margin-bottom: 20px; }
@@ -834,7 +850,7 @@
     justify-content: space-between;
     align-items:flex-end;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 20px;
   }
   .footer-mark{
     font-family:'Fraunces', serif;
@@ -843,7 +859,7 @@
   .footer-mark span{ color: var(--blue-bright); }
   .footer-links{
     display:flex;
-    gap: 26px;
+    gap: 18px;
     list-style:none;
     flex-wrap:wrap;
   }
@@ -855,6 +871,11 @@
     color: var(--ink-dim);
   }
   .footer-links a:hover{ color: var(--blue-bright); }
+  @media (max-width: 480px){
+    footer{ padding: 40px 0 28px; }
+    .footer-links{ gap: 14px; }
+    .footer-mark{ font-size: 1.1rem; }
+  }
   .footer-bottom{
     margin-top: 34px;
     color: #4c5a6a;
@@ -1294,7 +1315,7 @@
         <h3>Send an inquiry message</h3>
         <p class="desc">Not ready to book? Ask about availability, pricing, or scope first.</p>
         <!-- Replace YOUR_FORM_ID below with your real Formspree form ID once created -->
-        <form id="inquiryForm" action="https://formspree.io/f/mlgypwop" method="POST" novalidate>
+        <form id="inquiryForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
           <div class="form-group">
             <label for="iq-name">Name</label>
             <input type="text" id="iq-name" name="name" placeholder="Your full name" required>
@@ -1320,6 +1341,7 @@
             <textarea id="iq-message" name="message" placeholder="Tell me about your project, timeline, and what you're hoping to find out." required></textarea>
           </div>
           <button type="submit" class="btn btn-solid form-submit">Send message</button>
+          <p class="form-note">This connects to an email or form backend (e.g. Formspree, EmailJS) once deployed — see the comment near <code>#inquiryForm</code> in the page source.</p>
           <div class="form-status" id="inquiryStatus"></div>
         </form>
       </div>
